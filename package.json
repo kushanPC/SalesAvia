@@ -1,0 +1,59 @@
+{
+  "name": "habr",
+  "version": "1.0.0",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "simplebar": "^5.1.0"
+  },
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "description": "",
+  "devDependencies": {
+    "@babel/core": "^7.7.4",
+    "@babel/preset-env": "^7.7.4",
+    "babel-plugin-inline-json-import": "^0.3.2",
+    "browser-sync": "^2.26.7",
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb": "^18.0.1",
+    "eslint-plugin-import": "^2.19.1",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-babel": "^8.0.0",
+    "gulp-data": "^1.3.1",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-imagemin": "^6.1.1",
+    "gulp-json": "^0.1.4",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-nunjucks": "^5.0.1",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-stylelint": "^11.0.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^5.0.1",
+    "husky": "^3.1.0",
+    "imagemin-pngquant": "^8.0.0",
+    "json-loader": "^0.5.7",
+    "lint-staged": "^10.0.0-beta.14",
+    "rimraf": "^3.0.0",
+    "stylelint": "^12.0.0",
+    "stylelint-config-standard": "^19.0.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/js/*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
+}
