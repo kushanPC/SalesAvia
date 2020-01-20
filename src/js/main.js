@@ -1,3 +1,17 @@
+import tickets from './Tickets';
+import Callbacks from './Callbacks';
+import ParseHTML from './ParseHTML';
+import FiltersTicket from './FiltersTicket';
+import HTMLElements, { setHTML } from './HTMLElements';
+
+setHTML(
+  HTMLElements.ticketList,
+  ParseHTML.getTickets(FiltersTicket.sortLowPrice(tickets)),
+);
+HTMLElements.tabs.addEventListener('click', Callbacks.onClickTabs, false);
+
+
+// TODO: something
 const flightDuration = document.querySelectorAll('.duration');
 const price = document.querySelectorAll('.price');
 const flytime = document.querySelectorAll('.flytime');

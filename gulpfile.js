@@ -12,6 +12,11 @@ const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const rimraf = require('rimraf');
 const browserSync = require('browser-sync');
+const rollup = require('gulp-better-rollup');
+const babel = require('rollup-plugin-babel');
+const resolve = require('rollup-plugin-node-resolve');
+const commonjs = require('rollup-plugin-commonjs');
+const json = require('@rollup/plugin-json');
 
 const { reload } = browserSync;
 
@@ -71,6 +76,9 @@ gulp.task('html:build', () => {
 
 gulp.task('js:build', () => {
   gulp.src(path.src.js)
+    .pipe(rollup({ 
+      plugins: [babel(), resolve(), commonjs(), json()],
+    }, 'umd'))
     .pipe(sourcemaps.init())
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(path.build.js))
