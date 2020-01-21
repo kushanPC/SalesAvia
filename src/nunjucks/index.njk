@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/main.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i&display=swap" rel="stylesheet">
+  <title>Aviasales</title>
+</head>
+
+<body>
+  <div class="logo"></div>
+
+  <div class="seach-ticket">
+    <div class="filter">
+      <span class="title">количество пересадок</span>
+
+      <label class="all-check">
+        <input class="all-check-checkbox" type="checkbox" checked value=""><i></i>
+        <span>Все</span>
+      </label>
+
+      <label class="without-stops">
+        <input class="checkbox" type="checkbox" checked value=""><i></i>
+        <span>Без пересадок</span>
+      </label>
+
+      <label class="one-stops">
+        <input class="checkbox" type="checkbox" checked value=""><i></i>
+        <span>1 пересадка</span>
+      </label>
+
+      <label class="two-stops">
+        <input class="checkbox" type="checkbox" checked value=""><i></i>
+        <span>2 пересадки</span>
+      </label>
+
+      <label class="three-stops">
+        <input class="checkbox" type="checkbox" checked value=""><i></i>
+        <span>3 пересадки</span>
+      </label>
+    </div>
+
+    <div class="all-tickets">
+      <div class="tabs">
+        <button class="selected tab" data-button="cheap" type="button" name="button">самый дешевый</button>
+        <button class="tab" data-button="fast" type="button" name="button">самый быстрый</button>
+      </div>
+
+      <ul id="ticket-list"></ul>
+
+        <div class="no-tickets hide">
+          <h2>Мы нашли билетов. Но ни один не соответствует заданным фильтрам</h2>
+        </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/tabs.js"></script>
+  <script src="js/filter.js"></script>
+</body>
+</html>

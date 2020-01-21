@@ -1,0 +1,242 @@
+@import 'template/colors.scss';
+
+body {
+	margin: 0;
+	padding: 0;
+	background-color: #f3f7fa;
+	font-family: 'Open Sans', sans-serif;
+	font-style: normal;
+	font-weight: 600;
+}
+
+ul,
+li {
+	padding: 0;
+	margin: 0;
+}
+
+button {
+	padding: 0;
+	border: none;
+	font: inherit;
+	color: inherit;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.logo {
+	margin: auto;
+	margin-top: 5.21vw;
+	margin-bottom: 5.21vw;
+	height: 6.25vw;
+	width: 6.25vw;
+	background: url(../img/logo.svg);
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.seach-ticket {
+	margin: auto;
+	width: 78.54vw;
+	display: flex;
+	justify-content: space-between;
+}
+
+.filter {
+	width: 24.17vw;
+	height: 26.25vw;
+	box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 0.52vw;
+	display: flex;
+	flex-direction: column;
+	background-color: #fff;
+	overflow: hidden;
+
+	.title {
+		margin: 2.08vw 0 1vw 2.08vw;
+		font-size: 1.25vw;
+		line-height: 1.25vw;
+		font-weight: 600;
+		text-transform: uppercase;
+	}
+
+	label {
+		font-size: 1.35vw;
+		line-height: 2.08vw;
+		padding-left: 2.08vw;
+		width: 100%;
+		display: flex;
+		align-items: center;
+		height: 4.17vw;
+		color: #4a4a4a;
+		cursor: pointer;
+
+		&:hover {
+			background-color: #f1fcff;
+		}
+
+		span {
+			font-style: normal;
+			font-weight: normal;
+		}
+
+		i {
+			margin-right: 1.04vw;
+			display: inline-block;
+			width: 2.08vw;
+			height: 2.08vw;
+			border-radius: 0.21vw;
+			border: 1px solid #2196f3;
+			position: relative;
+
+			&::before {
+				content: '';
+				position: absolute;
+				background: url(../img/Shape.svg);
+				background-repeat: no-repeat;
+				background-size: 100%;
+				top: 0.5vw;
+				bottom: 0.1vw;
+				left: 0.1vw;
+				right: 0.1vw;
+				transform: scale(0);
+				transition: 0.2s;
+			}
+		}
+
+		input {
+			display: none;
+
+			&:checked + i::before {
+				transform: scale(1);
+			}
+		}
+	}
+}
+
+.all-tickets {
+	width: 52.29vw;
+
+	.tabs {
+		margin-bottom: 2.08vw;
+		width: 100%;
+		height: 5.21vw;
+		display: flex;
+		border-radius: 0.82vw;
+		overflow: hidden;
+
+		button {
+			width: 100%;
+			height: 100%;
+			font-size: 1.25vw;
+			letter-spacing: 0.5px;
+			text-transform: uppercase;
+			color: #4a4a4a;
+			align-items: center;
+			text-align: center;
+			background-color: #fff;
+			outline: 0;
+			border: 1px solid #dfe5ec;
+
+			&:first-child {
+				border-radius: 0.82vw 0 0 0.82vw;
+			}
+
+			&:last-child {
+				border-radius: 0 0.82vw 0.82vw 0;
+			}
+		}
+
+		.selected {
+			background-color: #2196f3;
+			border: 1px solid #2196f3;
+			color: #fff;
+		}
+	}
+
+	.hide {
+		display: none;
+	}
+
+	.no-tickets {
+		width: 48.13vw;
+		height: 15.01vw;
+		padding: 2.08vw;
+		background-color: #fff;
+		box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+		border-radius: 0.52vw;
+	}
+
+	ul {
+		li {
+			margin-bottom: 2.08vw;
+			width: 48.13vw;
+			height: 15.01vw;
+			padding: 2.08vw;
+			display: block;
+			background-color: #fff;
+			box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+			border-radius: 0.52vw;
+
+			.origin-destination {
+				margin: 0;
+				width: 10vw;
+			}
+
+			.head-ticket {
+				margin: 0;
+				margin-bottom: 2.08vw;
+				width: 41.88vw;
+				display: flex;
+				justify-content: space-between;
+				align-items: center;
+
+				.price {
+					margin: 0;
+					padding: 0;
+					font-size: 2.5vw;
+					line-height: 2.5vw;
+					font-weight: 600;
+					color: #2196f3;
+				}
+
+				.carrier {
+					width: 11.46vw;
+					height: 3.75vw;
+					background: url(../img/logo_ticket.svg);
+					background-repeat: no-repeat;
+					background-size: cover;
+				}
+			}
+
+			.segments {
+				margin-bottom: 1.04vw;
+				width: 38.5vw;
+				justify-content: space-between;
+				align-items: center;
+				display: flex;
+				line-height: 2.19vw;
+				font-size: 1.46vw;
+
+				.transfer {
+					text-transform: uppercase;
+					font-size: 1.25vw;
+					width: 10vw;
+				}
+
+				.time-way {
+					width: 10vw;
+				}
+			}
+
+			.title,
+			.title-transfer {
+				font-size: 1.25vw;
+				line-height: 1.88vw;
+				color: #a0b0b9;
+				font-weight: 600;
+				text-transform: uppercase;
+			}
+		}
+	}
+}
